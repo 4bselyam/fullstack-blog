@@ -10,7 +10,7 @@ export const register = async (req, res) => {
 
         const isExisting = await User.findOne({ username });
 
-        if (isExisting) return res.status(402).json({ message: 'This username is in use' });
+        if (isExisting) return res.json({ message: 'This username is in use' });
 
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
@@ -20,6 +20,14 @@ export const register = async (req, res) => {
             password: hash,
         });
 
+        const token = jwt.sign(
+            {
+                id: newUser._id,
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: '30d' },
+        );
+
         await newUser.save();
 
         const responseObj = {
@@ -27,9 +35,9 @@ export const register = async (req, res) => {
             posts: newUser.posts,
         };
 
-        return res.status(201).json({ message: 'Registration successfull', ...responseObj });
+        return res.status(201).json({ message: 'Registration successfull', ...responseObj, token });
     } catch (err) {
-        res.json({ message: 'Somethin went wrong' });
+        res.json({ message: 'Something went wrong' });
     }
 };
 

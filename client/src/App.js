@@ -1,4 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Layout } from './components/Layout';
 import { MainPage } from './pages/MainPage';
 import { PostsPage } from './pages/PostsPage';
@@ -20,6 +23,7 @@ function App() {
                 <Route path="register" element={<RegisterPage />} />
                 <Route path="login" element={<LoginPage />} />
             </Routes>
+            <ToastContainer position="bottom-right" />
         </Layout>
     );
 }
