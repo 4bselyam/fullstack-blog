@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 @layer base {
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: -webkit-linear-gradient(to right, #243b55, #141e30);
-        background: linear-gradient(to right, #243b55, #141e30);
-        min-height: 100vh;
-    }
+  body {
+    font-family: "Poppins", sans-serif;
+    background: -webkit-linear-gradient(to right, #243b55, #141e30);
+    background: linear-gradient(to right, #243b55, #141e30);
+    min-height: 100vh;
+  }
 }

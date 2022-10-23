@@ -1,3 +1,3 @@
 export const EditPost = () => {
-    return <div>EditPost</div>;
+  return <div>EditPost</div>;
 };
