@@ -21,14 +21,14 @@ The app will reload when you make changes.
 
 # Used Technologies
 
-## Frontend
+### Frontend
 
 -   React
 -   Redux
 -   Axios
 -   Tailwindcss
 
-## Backend
+### Backend
 
 -   Express
 -   Mongoose
